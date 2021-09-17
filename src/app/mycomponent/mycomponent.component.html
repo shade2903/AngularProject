@@ -3,3 +3,46 @@
 <!--(атрибут) - из html в ts-->
 <!--[(атрибут)] - в двух направлениях--> 
 <button [id]="myId" (click)="showMessage(name.value)">OK</button>
+
+<input [(ngModel)]="lastname"/>
+
+<div [ngStyle]="styles" (click)="changeStyle()">Angular</div>
+<div [ngClass]="classes" (mouseenter)="changeClasses(true)" (mouseleave)="changeClasses(false)">JAVA</div>
+
+<div *ngIf="lastname === 'Petrov'; else adv"> <!-- if- else-->
+    <p>Реклама</p>
+</div>
+
+<ng-template #adv> 
+    <p>Новая дурацкая реклама</p> 
+</ng-template>
+
+<div [ngSwitch]="human">  <!--Switch - Case-->
+    <ng-template [ngSwitchCase]="'man'">
+        <img src="https://vnokia.net/images/wallpaper/2021/wallpaper_1080x2400_02.jpg">
+    </ng-template>
+    <ng-template [ngSwitchCase]="'woman'">
+        <img src="https://vse-shutochki.ru/images/images/1559566622820.jpg">
+    </ng-template>
+    <ng-template [ngSwitchCase]="'child'">
+        <img src="https://i.pinimg.com/originals/8a/e8/01/8ae80124fc8c9706e698ef9929be8453.jpg">
+    </ng-template>
+</div> 
+<p>{{human}}</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.sex}}</td>
+        </tr>
+    </tbody>
+</table>

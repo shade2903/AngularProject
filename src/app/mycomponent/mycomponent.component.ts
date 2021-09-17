@@ -7,12 +7,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MycomponentComponent implements OnInit {
   public myId: string = 'test';
+  public lastname: string = "Sidorov";
+  public styles = {'color':'blue', 'font-size' : '32px'};
+  public classes = {'myclass':true, 'myclass2': false};
+  public human: string = 'man'; //man, woman, child
+  public  users= [
+    {    
+      name: 'Vasya',
+      age: 12,
+      sex: 'male'
+    },
+    {
+      name: 'Vika',
+      age: 25,
+      sex: 'female'
+    },
+    {
+      name: 'Marina',
+      age: 15,
+      sex: 'female'
+    },
+    {
+      name: 'Maksim',
+      age: 32,
+      sex: 'male'   
+
+  }
+  ];
+
+
+
  showMessage(name: string){
     alert(name);
+    console.log(this.lastname)
   }
   constructor() { }
 
   ngOnInit(): void {
   }
+  changeStyle(){
+    const randColor =()=> Math.trunc(Math.random()*255);
+    const r = randColor();
+    const g = randColor();
+    const b = randColor();
+    this.styles['color'] = `rgb(${r},${g},${b})`;
+  }
+  changeClasses(flag: boolean){
+    this.classes.myclass = !flag;
+    this.classes.myclass2 = flag;  }
 
 }
+
