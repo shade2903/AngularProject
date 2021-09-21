@@ -1,5 +1,18 @@
-<div>Hello gangster!!!</div>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Custom Toolbar        
+      </span>
+    </mat-toolbar-row>  
+  
+  </mat-toolbar>
 
-<bull></bull>
-<bull></bull>
-<bull></bull>
+  <button routerLinkActive="active" routerLink="/my">Load my component</button>
+  <button routerLinkActive="active" routerLink="/page">Load my page component</button>
+  <br/>
+  <!--
+      /my - mycomponed
+      /page- pagecomponed
+  -->
+
+
+  <router-outlet></router-outlet>

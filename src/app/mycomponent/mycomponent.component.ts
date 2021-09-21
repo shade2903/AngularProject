@@ -55,6 +55,13 @@ export class MycomponentComponent implements OnInit {
   changeClasses(flag: boolean){
     this.classes.myclass = !flag;
     this.classes.myclass2 = flag;  }
+    removeUser(user:any){
+    const index = this.users.indexOf(user);
+    if(index!== -1){
+      this.users.splice(index,1);
+    }
+
+    }
 
 }
 

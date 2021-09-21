@@ -46,3 +46,7 @@
         </tr>
     </tbody>
 </table>
+<app-user *ngFor="let user of users " 
+[looser]="user" 
+(remove)="removeUser(user)">
+</app-user>
