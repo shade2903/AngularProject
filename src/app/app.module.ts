@@ -13,6 +13,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { PageComponent } from './page/page.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service';
+import { JokeComponent } from './joke/joke.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [ //классы компонентов, деректив и пайпов
@@ -21,7 +25,8 @@ import { Page2Component } from './page2/page2.component';
     UserComponent,
     PageComponent,
     Page1Component,
-    Page2Component
+    Page2Component,
+    JokeComponent
   ],
   imports: [ //классы других модулей
     BrowserModule,
@@ -30,9 +35,12 @@ import { Page2Component } from './page2/page2.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    MatCardModule
   ],
-  providers: [], //классы сервисов (injectable классы)
+  providers: [ApiService], //классы сервисов (injectable классы)
+
   bootstrap: [AppComponent] //классы компонентов которые должны быть загружены перед стартом приложения
 })
 export class AppModule { }

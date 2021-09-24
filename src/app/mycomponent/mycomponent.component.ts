@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'bull',
@@ -41,7 +42,9 @@ export class MycomponentComponent implements OnInit {
     alert(name);
     console.log(this.lastname)
   }
-  constructor() { }
+  constructor(private apiService: ApiService) {
+    
+   }
 
   ngOnInit(): void {
   }
